@@ -30,7 +30,8 @@ const UrlSection = () => {
         method: "POST",
         headers: {
           "content-type": "application/x-www-form-urlencoded",
-          "X-RapidAPI-Key": import.meta.env.VITE_SOME_KEY,
+          // "X-RapidAPI-Key": import.meta.env.VITE_SOME_KEY,
+          "X-RapidAPI-Key": "8270335a98mshff2fc09f55e7c03p15f4a7jsn3afb95e7043a",
           "X-RapidAPI-Host": "url-shortener-service.p.rapidapi.com",
         },
         body,
