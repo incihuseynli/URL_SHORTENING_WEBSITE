@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://www.frontendmentor.io/solutions/shortly-url-shortening-api-challenge-solution-hzcdIp-g_f)
-- Live Site URL: (https://incihuseynli.github.io/URL_SHORTENING_WEBSITE/)
+- Live Site URL: (https://url-shortening-website-eight.vercel.app)
 
 ## My process
 
