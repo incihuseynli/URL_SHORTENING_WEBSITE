@@ -1,0 +1,10 @@
+@import "reset", "variables", "header", 
+"hero","urlSec", "stats", "boost", "footer";
+
+body {
+  font-family: $fontFamily;
+}
+.text {
+  @include text($fontSize-body2, left);
+  text-align: justify;
+}

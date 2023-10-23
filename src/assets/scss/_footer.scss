@@ -1,0 +1,48 @@
+.footer {
+  width: 100%;
+  background: $neutralVeryDarkViolet;
+  padding: $md $sm;
+  @include displayFlex(center, space-between, column);
+  gap: 2rem;
+  .footer-menu {
+    width: 100%;
+    @include displayGrid(repeat(2, 1fr), 2rem);
+    align-items: flex-start;
+    place-items: center;
+    .menu-title {
+      margin-bottom: 1rem;
+      @include textLink($fontSize-body1, left, $white);
+    }
+    .col {
+      @include displayFlex(flex-start, unset, column);
+      gap: 0.5rem;
+      li {
+        @include textLink($fontSize-body3, left, $neutralGrayishViolet);
+      }
+    }
+    .socials {
+      margin-top: 0.6rem;
+      @include displayFlex(center, unset, column);
+      gap: 0.8rem;
+      li:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 1040px) {
+  .footer {
+    padding-inline: $lg;
+    @include displayGrid(14rem 1fr, 4rem);
+    align-items: flex-start;
+    .logo {
+      width: 14rem;
+      margin-left: 4rem;
+    }
+    .footer-menu {
+      @include displayGrid(repeat(4, 1fr), unset);
+      align-items: flex-start;
+    }
+  }
+}

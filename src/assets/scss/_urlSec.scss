@@ -1,0 +1,147 @@
+/**
+*? ======================== URL SHORTENING SECTION ==================================
+**/
+.urlSection {
+  margin-inline: $sm;
+  position: relative;
+  .container {
+    width: 100%;
+    height: 18rem;
+    background: url("../images/bg-shorten-mobile.svg") $primaryDarkViolet;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 1rem;
+    padding: 2rem;
+    .urlShortenForm {
+      width: 100%;
+      height: 100%;
+      @include displayFlex(center, center, column);
+      gap: 1rem;
+      input {
+        @include input(100%);
+      }
+      .btn-primary {
+        @include btn(100%, 0.25rem);
+      }
+    }
+    .error {
+      position: absolute;
+      bottom: 3rem;
+      left: 2rem;
+      @include text($fontSize-body2, center);
+      color: $secondaryRed;
+    }
+    .result {
+      background: $brightWhite;
+      height: 10rem;
+      border-radius: 0.3rem;
+      padding: 1rem;
+      .links {
+        width: 100%;
+        @include displayFlex(flex-start, center, column);
+        h6 {
+          width: 100%;
+          @include text($fontSize-body2, left);
+          border-bottom: 1px solid $neutralGray;
+          padding-bottom: 0.3rem;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1; /* start showing ellipsis when 3rd line is reached */
+          white-space: pre-wrap; /* let the text wrap preserving spaces */
+        }
+        p {
+          @include text($fontSize-body2, left);
+          color: $primaryCyan;
+          margin-top: 1rem;
+        }
+      }
+      .btn-primary {
+        margin-top: 1rem;
+        @include btn(100%, 0.25rem);
+        &:focus {
+          background: $primaryDarkViolet;
+          border-color: $primaryDarkViolet;
+          color: $brightWhite;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          transform: translate3d(0, 0, 0);
+          perspective: 1000px;
+        }
+
+        @keyframes shake {
+          10%,
+          90% {
+            transform: translate3d(-1px, 0, 0);
+          }
+          20%,
+          80% {
+            transform: translate3d(2px, 0, 0);
+          }
+          30%,
+          50%,
+          70% {
+            transform: translate3d(-4px, 0, 0);
+          }
+          40%,
+          60% {
+            transform: translate3d(4px, 0, 0);
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1040px) {
+  .urlSection {
+    margin-inline: $lg;
+    margin-bottom: -4rem;
+    .container {
+      background-image: url("../images/bg-shorten-desktop.svg");
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      .urlShortenForm {
+        padding-inline: 4rem;
+        flex-direction: row;
+        // margin-top: -2rem;
+        .btn-primary {
+          width: 10rem;
+        }
+      }
+      .error {
+        bottom: 5rem;
+        left: 6rem;
+        text-align: left;
+      }
+      .result {
+        padding: 2rem 1.5rem;
+        width: 84.5%;
+        height: 2.5rem;
+        position: absolute;
+        bottom: 2rem;
+        left: 6rem;
+        @include displayFlex(center, space-between, row);
+        gap: 2rem;
+        .links {
+          @include displayFlex(center, space-between, row);
+          h6 {
+            @include text($fontSize-body2, left);
+            border-bottom: none;
+            margin-bottom: -0.5rem;
+            margin-right: 1rem;
+          }
+          p {
+            @include text($fontSize-body2, left);
+            color: $primaryCyan;
+            margin-top: 0rem;
+          }
+        }
+        .btn-primary {
+          margin-top: 0rem;
+          @include btn(8rem, 0.25rem);
+        }
+      }
+    }
+  }
+}

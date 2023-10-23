@@ -1,0 +1,166 @@
+// Font Family
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+$fontFamily: "Poppins", sans-serif;
+
+// Font Sizes
+
+$fontSize-LGheading: 4rem;
+$fontSize-SMheading: 3rem;
+
+$fontSize-title1: 2.5rem;
+$fontSize-title2: 2rem;
+$fontSize-title3: 1.5rem;
+
+$fontSize-body1: 1.25rem;
+$fontSize-body2: 1rem;
+$fontSize-body3: 0.875rem;
+$fontSize-body4: 0.625rem;
+
+// Colors
+
+$primaryCyan: hsl(180, 66%, 49%);
+$primaryDarkViolet: hsl(257, 27%, 26%);
+
+$secondaryRed: hsl(0, 87%, 67%);
+
+$neutralGray: hsl(0, 0%, 75%);
+$neutralGrayishViolet: hsl(257, 7%, 63%);
+$neutralVeryDarkBlue: hsl(255, 11%, 22%);
+$neutralVeryDarkViolet: hsl(260, 8%, 14%);
+
+$white: #fdfdfd;
+$brightWhite: #fffefe;
+
+// Margins and Paddings
+
+$sm: 1rem;
+$md: 2rem;
+$lg: 4rem;
+
+@mixin btn($width, $borderRadius) {
+  width: $width;
+  height: 3rem;
+  background: $primaryCyan;
+  color: $brightWhite;
+  font-size: $fontSize-body1;
+  text-transform: capitalize;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.6s linear;
+  border-radius: $borderRadius;
+  a {
+    color: $brightWhite;
+  }
+  &:hover {
+    background: $brightWhite;
+    color: $primaryCyan;
+    border: 2px solid $primaryCyan;
+    a {
+      color: $primaryCyan;
+    }
+  }
+ 
+}
+
+@mixin textBtn() {
+  font-size: $fontSize-body1;
+  text-transform: capitalize;
+  letter-spacing: -0.0125rem;
+  line-height: 1.5;
+  color: $neutralGrayishViolet;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.6s linear;
+  background: none;
+  a {
+    color: $neutralVeryDarkViolet;
+  }
+  &:hover {
+    color: $primaryCyan;
+    a {
+      color: $primaryCyan;
+    }
+  }
+}
+@mixin heading($fontSize) {
+  font-size: $fontSize;
+  font-weight: 700;
+  color: $primaryDarkViolet;
+  line-height: 1.2;
+  letter-spacing: 0.125rem;
+  text-align: left;
+}
+
+@mixin title($fontSize, $textAlign) {
+  font-size: $fontSize;
+  font-weight: 700;
+  color: $neutralVeryDarkViolet;
+  text-align: $textAlign;
+  text-transform: capitalize;
+}
+
+@mixin text($fontSize, $textAlign) {
+  font-size: $fontSize;
+  letter-spacing: -0.0125rem;
+  line-height: 1.5;
+  color: $neutralGrayishViolet;
+  font-weight: 500;
+  text-align: $textAlign;
+}
+@mixin subtitle() {
+  font-size: $fontSize-body1;
+  text-align: left;
+  color: $primaryDarkViolet;
+  letter-spacing: -0.0125rem;
+  line-height: 1.5;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+@mixin textLink($fontSize, $textAlign, $clr) {
+  font-size: $fontSize;
+  letter-spacing: -0.0125rem;
+  line-height: 1.5;
+  color: $clr;
+  font-weight: 600;
+  text-align: $textAlign;
+}
+// @mixin bgBoost(){
+//     width: 100%;
+//     background-image: url('../images/');
+// }
+
+@mixin displayFlex($align, $justify, $dir) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $dir;
+}
+
+@mixin displayGrid($columns, $gap) {
+  display: grid;
+  grid-template-columns: $columns;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin card() {
+  width: $width;
+}
+
+@mixin input($width) {
+  width: $width;
+  height: 3rem;
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  font-size: $fontSize-body2;
+  font-weight: 500;
+  color: $neutralGrayishViolet;
+  
+  &:focus{
+    outline: 2px solid $primaryCyan;
+  }
+}

@@ -1,0 +1,89 @@
+/**
+*? ======================== HEADER SECTION ================================== 
+*/
+header {
+  padding: $md $sm;
+  .lgMenu {
+    display: none;
+  }
+  .smMenu {
+    @include displayFlex(center, space-between, row);
+    position: relative;
+    transition: 0.6s linear;
+    i {
+      font-size: $fontSize-body1;
+      margin-bottom: 0.5rem;
+      color: $neutralGrayishViolet;
+    }
+    .fa-bars {
+      transition: 0.6s linear;
+    }
+    .fa-xmark {
+      transition: 0.6s linear;
+      rotate: 90deg;
+    }
+    .navMenu {
+      width: 100%;
+      position: absolute;
+      background: $primaryDarkViolet;
+      border-radius: 0.6rem;
+      padding: 2rem 1rem;
+      top: 4rem;
+      @include displayFlex(center, center, column);
+      gap: 1.5rem;
+      z-index: 3;
+      li,
+      button {
+        @include textLink($fontSize-body1, center, $white);
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        color: rgba($neutralGray, 0.3);
+      }
+      .btn-primary {
+        @include btn(100%, 2rem);
+      }
+      .btn-text {
+        @include textBtn();
+        color: $white;
+      }
+    }
+  }
+}
+
+@media (min-width: 1040px) {
+  header {
+    padding-inline: $lg;
+    .smMenu {
+      display: none;
+    }
+    .lgMenu {
+      @include displayFlex(center, space-between, row);
+      .row {
+        @include displayFlex(center, space-between, row);
+        gap: 2rem;
+        .btn-primary {
+          @include btn(8rem, 2rem);
+        }
+        .btn-text {
+          @include textBtn();
+        }
+        .navmenu {
+          @include displayFlex(center, unset, row);
+          gap: 1rem;
+          li {
+            @include text($fontSize-body2, center);
+            font-weight: 600;
+            transition: 0.6s linear;
+            cursor: pointer;
+            &:hover {
+              color: $neutralVeryDarkViolet;
+            }
+          }
+        }
+      }
+    }
+  }
+  //   ============================= END ====================================================
+}
